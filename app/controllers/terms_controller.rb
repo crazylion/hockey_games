@@ -13,6 +13,7 @@ class TermsController < ApplicationController
   # GET /terms/new
   def new
     @term = Term.new
+    @cups = Cup.all
   end
 
   # GET /terms/1/edit
@@ -58,13 +59,14 @@ class TermsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_term
-      @term = Term.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def term_params
-      params.require(:term).permit(:name, :cup_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_term
+    @term = Term.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def term_params
+    params.require(:term).permit(:name, :cup_id)
+  end
 end
