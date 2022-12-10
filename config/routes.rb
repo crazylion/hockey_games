@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :terms
+      resources :teams
+      resources :games
+      resources :cups
+
+      root to: "terms#index"
+    end
   get 'index/index'
   resources :games
   resources :teams
