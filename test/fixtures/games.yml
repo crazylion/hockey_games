@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  home_team: MyString
+  home_team_id: 1
+  guest_team: MyString
+  guest_team_id: 1
+  home_team_score: 1
+  guest_team_score: 1
+  play_at: 2022-12-10 23:13:22
+  division_name: MyString
+
+two:
+  name: MyString
+  home_team: MyString
+  home_team_id: 1
+  guest_team: MyString
+  guest_team_id: 1
+  home_team_score: 1
+  guest_team_score: 1
+  play_at: 2022-12-10 23:13:22
+  division_name: MyString

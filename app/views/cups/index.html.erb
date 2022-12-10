@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cups</h1>
+
+<div id="cups">
+  <% @cups.each do |cup| %>
+    <%= render cup %>
+    <p>
+      <%= link_to "Show this cup", cup %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cup", new_cup_path %>

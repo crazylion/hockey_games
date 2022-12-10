@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cup %>
+
+<div>
+  <%= link_to "Edit this cup", edit_cup_path(@cup) %> |
+  <%= link_to "Back to cups", cups_path %>
+
+  <%= button_to "Destroy this cup", @cup, method: :delete %>
+</div>
