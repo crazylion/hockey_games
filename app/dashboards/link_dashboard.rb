@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class GameDashboard < Administrate::BaseDashboard
+class LinkDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,15 +9,9 @@ class GameDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    division_name: Field::String,
-    guest_team: Field::String,
-    guest_team: Field::String,
-    guest_team_score: Field::Number,
-    home_team: Field::String,
-    home_team: Field::String,
-    home_team_score: Field::Number,
-    name: Field::String,
-    play_at: Field::DateTime,
+    game: Field::BelongsTo,
+    title: Field::String,
+    url: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,24 +23,18 @@ class GameDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    division_name
-    guest_team
-    guest_team
+    game
+    title
+    url
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    division_name
-    guest_team
-    guest_team
-    guest_team_score
-    home_team
-    home_team
-    home_team_score
-    name
-    play_at
+    game
+    title
+    url
     created_at
     updated_at
   ].freeze
@@ -55,15 +43,9 @@ class GameDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    division_name
-    guest_team
-    guest_team
-    guest_team_score
-    home_team
-    home_team
-    home_team_score
-    name
-    play_at
+    game
+    title
+    url
   ].freeze
 
   # COLLECTION_FILTERS
@@ -78,10 +60,10 @@ class GameDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how games are displayed
+  # Overwrite this method to customize how links are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(game)
-  #   "Game ##{game.id}"
+  # def display_resource(link)
+  #   "Link ##{link.id}"
   # end
 end
